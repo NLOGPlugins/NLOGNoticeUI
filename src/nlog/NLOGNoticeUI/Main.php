@@ -61,7 +61,7 @@ class Main extends PluginBase implements Listener {
 	
 	public function onPlayerJoin (PlayerJoinEvent $ev) {
 		$pl = $ev->getPlayer();
-		if ($this->player->get($name) === false) {
+		if ($this->player->get($pl->getName()) === false) {
 			sleep(5);
 			$json = [];
 			$json["type"] = "modal";
