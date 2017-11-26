@@ -60,13 +60,13 @@ class Main extends PluginBase implements Listener {
 	}
 	
 	public function onPlayerJoin (PlayerJoinEvent $ev) {
-		$name = $ev->getPlayer()->getName();
+		$pl = $ev->getPlayer();
 		if ($this->player->get($name) === false) {
 			sleep(5);
 			$json = [];
 			$json["type"] = "modal";
-			$json["title"] = $this->setting->getTitle($name);
-			$json["content"] = $this->setting->getMessage($name);
+			$json["title"] = $this->setting->getTitle($pl);
+			$json["content"] = $this->setting->getMessage($pl);
 			$json["button1"] = ">> 하루 동안 보지 않기 <<"; //true
 			$json["button2"] = ">> 닫기 <<"; //false
 			
