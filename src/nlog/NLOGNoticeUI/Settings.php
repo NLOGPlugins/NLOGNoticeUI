@@ -71,7 +71,7 @@ class Settings {
 	
 	public function getTitle(Player $player, $economy = null) {
 		if (!$economy instanceof EconomyAPI) {
- +			$economy = EconomyAPI::getInstance();
+			$economy = EconomyAPI::getInstance();
 		}
 		$msg = $this->config->get("title");
 		$msg = str_replace($this->availableParameter, [
